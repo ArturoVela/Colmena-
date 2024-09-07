@@ -155,9 +155,10 @@ label {
     box-sizing: border-box;
 }
 
-.boton_inicio input[type="submit"]:hover {
-    background-color: white ;
-    color: rgb(0, 0, 0);
+.boton_inicio input[type="submit"] {
+    
+    position: relative;
+    z-index: 1; 
 }
 
 
