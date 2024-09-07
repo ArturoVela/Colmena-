@@ -39,7 +39,6 @@ header{
     z-index: 1000; 
 }
 
-
 .cerrar_sesion {
     font-size: 16px;
     margin-top: 20px;
@@ -67,7 +66,7 @@ header{
     justify-content: center;
     align-items: center;
     transform: translateX(10px);
-    color: #fff;
+    color: #ffffff;
 }
 
 .icon__menu i{
@@ -83,7 +82,7 @@ header{
     position: fixed;
     top: 0;
     left: 0;
-    color: white;
+    color: rgb(255, 255, 255);
     font-size: 18px;
     z-index: 300;
     overflow: hidden;
@@ -123,7 +122,7 @@ header{
 }
 
 .options__menu a{
-    color: #fff;
+    color: #ffffff;
     cursor: default;
     display: block;
     position: relative;
@@ -153,7 +152,7 @@ header{
 }
 
 a.selected{
-    color: #ffffff;
+    color: #white;
     
 }
 
@@ -161,9 +160,9 @@ a.selected{
     content: '';
     width: 3px;
     height: 80%;
-    background: white;
+    background: rgb(255, 255, 255);
     position: absolute;
-    top: 10%;
+    top: 650%;
     left: -30px;
 }
 
@@ -187,4 +186,51 @@ a.selected{
         width: 80px;
         left: -80px;
     }
+}
+
+.stock-header {
+    display: flex;
+    align-items: center; 
+    gap: 10px; 
+}
+
+.stock-header h1 {
+    margin: 0;
+    
+}
+
+
+.Nuevos {
+    display: flex;
+    align-items: center;
+     
+}
+
+.nuevo-item {
+    position: relative;
+    display: flex;
+    align-items: center; 
+    left: 20px;
+    color: rgb(255, 255, 255);
+    background-color: green;
+    border-radius: 6px;
+    padding: 6px;
+}
+
+.nuevo-item i {
+    margin-right: 5px; 
+}
+
+.stock-text {
+    font-size: 16px;
+}
+
+
+.textoSTOCK{
+    display: flex;
+    justify-content: flex-end;
+    font-size: 85%;
+    margin-top: -5%;
+    align-items: center;
+
 }
