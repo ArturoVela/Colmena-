@@ -1,0 +1,162 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root{
+    --body-color:#9B27B00D;
+    --sidebar-color:#ffffff;
+    --primary-color:#9C27B0;
+    --primary-color-light:#9B27B00D;
+    --text-color:#707070;
+
+    --tran-03: all 0.2s ease;
+    --tran-04: all 0.3s ease;
+    --tran-05: all 0.4s ease;
+}
+
+body {
+    min-width: 100vh;
+    background-color: var(--body-color);
+    transition: var(--tran-05);
+}
+
+::selection {
+    background-color: var(--primary-color);
+    color: var(--sidebar-color);
+}
+
+.sibar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 250px;
+    padding: 10px 14px;
+    background: var(--sidebar-color);
+    transition: var(--tran-05);
+    z-index: 100;
+}
+
+.sibar.close {
+    width: 88px;
+}
+
+.sibar li {
+    height: 50px;
+    list-style: none;
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.sibar header .image,
+.sibar .icon {
+            max-width: 60px;
+            border-radius: 6px;
+}
+
+.sibar .icon {
+    min-width: 60px;
+    border-radius: 6px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+}
+
+.sibar .text, 
+.sibar .icon {
+    color: var(--text-color);
+    transition: var(--tran-03);
+}
+
+.sibar .text {
+    font-size: 17px;
+    font-weight: 500;
+    white-space: nowrap;
+    opacity: 1;
+}
+
+.sibar.close .text{
+    opacity: 0;
+} 
+ 
+.sibar header{
+    position: relative;
+}
+
+.sibar header .logo {
+    display: flex;
+    flex-direction: column;
+}
+
+.name {
+    margin-top: 2px;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.profe {
+    font-size: 16px;
+    margin-top:  -2px;
+    display: block;
+}
+
+.sibar header .image {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.sibar header .image img {
+    width: 48px;
+    border-radius: 6px;
+}
+
+.sibar header .toggle {
+    position: absolute;
+    top: 20px;
+    right: 0%;
+    height: 35px;
+    background-color: var(--primary-color);
+    color: var(--sidebar-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 35px;
+    cursor:  pointer;
+    transition: var(--tran-05);
+}
+
+.sibar.close .toggle {
+    width: 100%;
+    top: 20%;
+}
+
+.sibar .menu {
+    margin-top: 40px;
+}
+
+.sibar li.search_box {
+    border-radius: 6px;
+    background-color: var(--primary-color-light);
+    cursor: pointer;
+    transition: var(--tran-05);
+}
+
+.sibar li.search_box input {
+    height: 100%;
+    width: 100%;
+    outline: none;
+    border: none;
+    background-color: var(--primary-color-light);
+    color: var(--text-color);
+    border-radius: 6px;
+    font-size: 17px;
+    font-weight: 500;
+    transition: var(--tran-05);
+}
+
