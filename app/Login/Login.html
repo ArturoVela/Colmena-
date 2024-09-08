@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Inicar Session</title>
     <link rel="stylesheet" href="style.css">
+    <script src="login.js" defer></script>
 </head>
 <body>
     
@@ -24,24 +25,25 @@
             </a>
         </div>
         <div class="FORMULARIO">
-            <form method="post">
+            <form method="post" id="frorm-container">
                 <div class="username">
-                    <label>USUARIO</label>
-                    <input type="text" required placeholder="Ingrese su usuario">
+                    <label for="user">USUARIO</label>
+                    <input type="text" name="user" id="user" required placeholder="Ingrese su usuario">
                 </div>
                 <div class="pass">
-                    <label>CONTRASEÑA</label>
+                    <label for="password">CONTRASEÑA</label>
                     <div class="pass_caja">
-                        <input type="password" required placeholder="Ingrese su contraseña">
+                        <input type="password" name="password" id="password" required placeholder="Ingrese su contraseña">
                     </div>
                 </div>
                 <div class="Recordar">
-                    <a href="OlvidasteContraseña.html" class="Recrodar2">
+                    <a href="/recuperar" class="Recrodar2">
                         ¿olvidaste tu contraseña?
                     </a></div>
                     <div  class="boton_inicio">
                         <input type="submit" value="INICIAR SESSIÓN" onclick="redirecionar()">
                     </div>
+                    <p class="error escondido">Error al iniciar session  </p>
                 <!-- <div class="Registro">
                     <a href="#" class="Registro2">
                         ¿Aún no tienes una cuenta? Regístrate
