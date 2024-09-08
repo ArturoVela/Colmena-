@@ -2,9 +2,10 @@
   "name": "colmena-",
   "version": "1.0.0",
   "main": "index.js",
-  "type": "module",
+  "type":"module",
   "scripts": {
-    "dev": "nodemon --exec node app/index.js"
+    "start": "node app/index.js",
+    "dev": "nodemon app/index.js"
   },
   "keywords": [],
   "author": "",
@@ -12,12 +13,14 @@
   "description": "",
   "dependencies": {
     "bcryptjs": "^2.4.3",
+    "body-parser": "^1.20.2",
     "cookie-parser": "^1.4.6",
     "dotenv": "^16.4.5",
     "express": "^4.19.2",
-    "jsonwebtoken": "^9.0.2"
-  },
-  "devDependencies": {
+    "express-handlebars": "^8.0.1",
+    "express-myconnection": "^1.0.4",
+    "jsonwebtoken": "^9.0.2",
+    "mysql": "^2.18.1",
     "nodemon": "^3.1.4"
   }
 }

@@ -1,5 +1,14 @@
-import express from "express";
+//import express from "express";
 import cookieParser from 'cookie-parser';
+
+
+import express from 'express';
+import { engine } from 'express-handlebars';
+import myconnection from 'express-myconnection';
+import bodyParser from 'body-parser';
+import mysql from 'mysql';
+
+
 //Fix para __direname
 import path from 'path';
 import {fileURLToPath} from 'url';
@@ -13,6 +22,16 @@ const app = express();
 app.set("port",4000);
 app.listen(app.get("port"));
 console.log("Servidor corriendo en puerto",app.get("port"));
+
+//SQL
+app.use(myconnection(mysql, {
+    host: 'localhost',
+    user: 'root',
+    password: '',
+    port: 3306,
+    database: 'Colmena'
+  }, 'single'));
+
 
 
 //Configuración
