@@ -24,6 +24,9 @@ app.use(cookieParser())
 app.get("/",(req,res)=> res.sendfile(__dirname + "/Login/Login.html"));
 app.get("/recuperar",(req,res)=> res.sendfile(__dirname + "/Login/OlvidasteContraseña.html"));
 app.get("/menu",(req,res)=> res.sendfile(__dirname + "/Login/Menu/MenuP.html"));
+app.get("/reservaciones",(req,res)=> res.sendfile(__dirname + "/Login/Menu/Reserva.html"));
+app.get("/inventario",(req,res)=> res.sendfile(__dirname + "/Login/Menu/Inventario.html"));
+app.get("/usuario",(req,res)=> res.sendfile(__dirname + "/Login/Menu/Usuarios.html"));
 
 
 console.log(__dirname);
