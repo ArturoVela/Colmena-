@@ -145,7 +145,6 @@ header{
     width: 20px;
     margin-right: 20px;
     cursor: pointer;
-
 }
 
 .options__menu .option h4{
@@ -154,7 +153,7 @@ header{
 }
 
 a.selected{
-    color: #ffffff;
+    color: #white;
     
 }
 
@@ -162,9 +161,9 @@ a.selected{
     content: '';
     width: 3px;
     height: 80%;
-    background: white;
+    background: rgb(255, 255, 255);
     position: absolute;
-    top: 10%;
+    top: 550%;
     left: -30px;
 }
 

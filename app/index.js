@@ -27,6 +27,11 @@ app.get("/menu",(req,res)=> res.sendfile(__dirname + "/Login/Menu/MenuP.html"));
 app.get("/reservaciones",(req,res)=> res.sendfile(__dirname + "/Login/Menu/Reserva.html"));
 app.get("/inventario",(req,res)=> res.sendfile(__dirname + "/Login/Menu/Inventario.html"));
 app.get("/usuario",(req,res)=> res.sendfile(__dirname + "/Login/Menu/Usuarios.html"));
+app.get("/cliente",(req,res)=> res.sendfile(__dirname + "/Login/Menu/Clientes.html"));
+app.get("/ventas",(req,res)=> res.sendfile(__dirname + "/Login/Menu/Ventas.html"));
+app.get("/compras",(req,res)=> res.sendfile(__dirname + "/Login/Menu/Compras.html"));
+app.get("/caja",(req,res)=> res.sendfile(__dirname + "/Login/Menu/Caja.html"));
+app.get("/incidencias",(req,res)=> res.sendfile(__dirname + "/Login/Menu/Incidencias.html"));
 
 
 console.log(__dirname);
