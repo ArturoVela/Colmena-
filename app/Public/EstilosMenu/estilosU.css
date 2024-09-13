@@ -188,3 +188,109 @@ a.selected{
         left: -80px;
     }
 }
+
+
+
+
+
+
+/* Estilo del contenido principal */
+.main-content {
+    margin-left: -30px; /* Espacio para la barra lateral */
+    margin-top: -30px; /* Espacio para la barra de cerrar sesión */
+    padding: 20px;
+}
+
+/* Estilo de la tabla */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th, td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+
+.green {
+    background-color: #4CAF50;
+    color: white;
+}
+
+.red {
+    background-color: #f44336;
+    color: white;
+}
+
+/* Controles */
+.controls {
+    margin-bottom: 20px;
+}
+
+/* Paginación */
+.pagination {
+    margin-top: 20px;
+}
+
+.pagination p {
+    margin: 0;
+}
+
+.pagination div {
+    display: inline-block;
+}
+
+.pagination button {
+    background-color: white;
+    border: 1px solid #ddd;
+    padding: 5px 10px;
+    margin-left: 5px;
+    cursor: pointer;
+}
+
+.pagination button.active {
+    background-color: #4CAF50;
+    color: white;
+}
+
+
+.title-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #f0f0f0;
+    margin-bottom: 20px;
+}
+
+.title-section h1 {
+    font-size: 24px;
+    color: #333;
+    margin: 0;
+}
+
+.new-btn {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.new-btn:hover {
+    background-color: #45a049;
+}
+
+.ver-img {
+    width: 24px;  /* Ajusta el ancho según lo que prefieras */
+    height: auto; /* Mantiene la proporción de la imagen */ 
+}
+
+.ver-img2 {
+    width: 50px;  /* Ajusta el ancho según lo que prefieras */
+    height: auto; /* Mantiene la proporción de la imagen */ 
+}

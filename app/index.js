@@ -51,6 +51,7 @@ app.get("/ventas",(req,res)=> res.sendfile(__dirname + "/Login/Menu/Ventas.html"
 app.get("/compras",(req,res)=> res.sendfile(__dirname + "/Login/Menu/Compras.html"));
 app.get("/caja",(req,res)=> res.sendfile(__dirname + "/Login/Menu/Caja.html"));
 app.get("/incidencias",(req,res)=> res.sendfile(__dirname + "/Login/Menu/Incidencias.html"));
+app.get("/proveedores",(req,res)=> res.sendfile(__dirname + "/Login/Menu/Proveedor.html"));
 
 
 console.log(__dirname);

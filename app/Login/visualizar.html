@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestión de Ventas</title>
+    <link rel="stylesheet" href="../css/stylevisualizar.css">
+</head>
+<body>
+    
+    <div class="sidebar">
+        <div class="logo">
+            <img src="../image/LogoColmena.PNG" alt="Logo Colmena">
+        </div>
+        <ul>
+            <li><a href="#" class="menu-item"><img src="../image/inicio.png" alt="Inicio"></a></li>
+            <li><a href="#" class="menu-item"><img src="../image/reservas - Editada.png" alt="Reservas"></a></li>
+            <li><a href="#" class="menu-item"><img src="../image/clienteseditado.png" alt="Clientes"></a></li>
+            <li>
+                <a href="../html/ventas.html" class="menu-item">
+                    <img src="../image/ventaseditado_resized.png" alt="Ventas">
+                    <span class="span_ventas">VENTAS</span>
+                </a>
+            </li>
+        </ul>
+    </div>
+
+    <div class="main-content">
+        <!-- Encabezado "VENTAS" agregado -->
+        <div class="title-section">
+            <h1>Ventas</h1>
+            <button class="new-btn">+ Nuevo</button>
+        </div>
+
+        <div class="header">
+            <div class="user-logout">
+                <img src="../image/login.PNG" alt="Usuario" class="user-icon">
+                <button class="logout-btn">CERRAR SESIÓN</button>
+            </div>
+        </div>
+    
+        <div class="controls">
+            <label>Mostrar</label>
+            <select>
+                <option>10</option>
+            </select>
+            <label>registros</label>
+            <button><img src="/image/Copiar.PNG" alt="Copiar"> Copiar</button>
+            <button class="green"><img src="/image/Excel.PNG" alt="Excel"></button>
+            <button class="green"><img src="/image/Csv.PNG" alt="CSV"></button>
+            <button class="red"><img src="/image/PDF.PNG" alt="PDF"></button>
+            <input type="text" placeholder="BUSCAR">
+        </div>
+        
+        <table>
+            <thead>
+                <tr>
+                    <th>Nro Documento</th>
+                    <th>Tipo de Documento</th>
+                    <th>Fecha Venta</th>
+                    <th>Forma de pago</th>
+                    <th>Descripción</th>
+                    <th>Estado</th>
+                    <th>Total</th>
+                    <th>ACCIONES</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>000113</td>
+                    <td>Boleta</td>
+                    <td>02-10-2024</td>
+                    <td>Efectivo</td>
+                    <td>---</td>
+                    <td class="green">Exitosa</td>
+                    <td>334.00</td>
+                    <td>
+                        <button class="action-btn"><img src="/image/Ver.PNG" alt="Ver"></button>
+                        <button class="action-btn"><img src="/image/Editar.PNG" alt="Editar"></button>
+                        <button class="action-btn"><img src="/image/Eliminar.PNG" alt="Eliminar"></button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>00011222</td>
+                    <td>Factura</td>
+                    <td>02-10-2024</td>
+                    <td>Efectivo</td>
+                    <td>---</td>
+                    <td class="red">Anulado</td>
+                    <td>---</td>
+                    <td>
+                        <button class="action-btn"><img src="/image/Ver.PNG" alt="Ver"></button>
+                        <button class="action-btn"><img src="/image/Editar.PNG" alt="Editar"></button>
+                        <button class="action-btn"><img src="/image/Eliminar.PNG" alt="Eliminar"></button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        
+        <div class="pagination">
+            <p>Mostrando registros del 1 al 2 de un total de 2 registros</p>
+            <div>
+                <button>Anterior</button>
+                <button class="active">1</button>
+                <button>Siguiente</button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

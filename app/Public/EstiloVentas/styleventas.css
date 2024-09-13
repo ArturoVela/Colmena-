@@ -1,0 +1,168 @@
+/* Estilo de la barra lateral */
+.sidebar {
+    width: 200px;
+    background-color: #000000;
+    color: white;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+
+.logo img {
+    width: 150px;
+    height: auto;
+    display: block;
+    margin: 20px auto;
+}
+
+.sidebar ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.sidebar ul li {
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
+}
+
+.sidebar ul li a {
+    text-decoration: none;
+    color: white;
+    text-align: center;
+}
+
+.sidebar ul li a img {
+    width: 40px;
+    height: auto;
+}
+
+.span_ventas {
+    display: block;
+    text-align: center;
+    color: white;
+    font-size: 14px;
+    margin-top: 5px;
+    text-decoration: none;
+}
+
+/* Estilo de la barra de cerrar sesión */
+.header {
+    background-color: #000; /* Fondo negro */
+    color: white;
+    height: 60px; /* Aumentar la altura para centrado adecuado */
+    display: flex;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 200px; /* Alineación con la barra lateral */
+    width: calc(100% - 200px); /* Resto del ancho */
+    z-index: 2; /* Asegura que la barra esté sobre el contenido */
+    padding: 0 20px; /* Espaciado horizontal */
+    justify-content: flex-end; /* Alinear al lado derecho */
+}
+
+/* Estilo de la imagen de usuario */
+.user-icon {
+    width: 55px;
+    height: 40px;
+    margin-left: 10px; /* Espacio entre el botón y la imagen */
+}
+
+/* Botón de cerrar sesión */
+.logout-btn {
+    background-color: rgb(0, 0, 0);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+/* Estilo del contenido principal */
+.main-content {
+    margin-left: 200px; /* Espacio para la barra lateral */
+    margin-top: 60px; /* Espacio para la barra de cerrar sesión */
+    padding: 20px;
+}
+
+/* Estilos del formulario */
+.form-container {
+    background-color: #f0f0f0;
+    padding: 20px;
+    border-radius: 10px;
+    width: 100%;
+}
+
+fieldset {
+    margin-bottom: 20px;
+    padding: 10px;
+    border: 1px solid #ddd;
+}
+
+legend {
+    font-weight: bold;
+}
+
+label {
+    display: block;
+    margin-bottom: 10px;
+}
+
+input, select, textarea {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+th, td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+
+.submit-btn {
+    background-color: black;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    width: 100%;
+    text-align: center;
+}
+
+.close-btn {
+    background-color: red;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 50%;
+    float: right;
+    cursor: pointer;
+}
+
+/* Sección de IGV, Descuento, SUB TOTAL */
+fieldset div {
+    display: flex;
+    justify-content: space-between;
+}
+
+input[type="number"] {
+    width: auto;
+}
+
+select {
+    width: 100%;
+}

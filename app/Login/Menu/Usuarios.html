@@ -9,6 +9,8 @@
     <link rel="stylesheet" href="EstilosMenu/estilosU.css">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <script src="https://kit.fontawesome.com/41bcea2ae3.js" crossorigin="anonymous"></script>
+
+
 </head>
 <body id="body">
     
@@ -103,8 +105,83 @@
     </div>
 
     <main>
-        <h1>USUARIOS</h1><br>
-        <p>Acá pones todo lo qu esta en la doc de usuarios</p> <br>
+        <div class="main-content">
+            <!-- Encabezado "VENTAS" agregado -->
+            <div class="title-section">
+                <h1>USUARIOS</h1>
+                <button class="new-btn">+ Nuevo</button>
+            </div>
+    
+        
+        
+            <div class="controls">
+                <label>Mostrar</label>
+                <select>
+                    <option>10</option>
+                </select>
+                <label>registros</label>
+                <button><img class="ver-img2" src="EstiloVentas/image/Copiar.PNG" alt="Copiar"> Copiar</button>
+                <button ><img class="ver-img2" src="EstiloVentas/image/Excel.PNG" alt="Excel"></button>
+                <button ><img class="ver-img2" src="EstiloVentas/image/Csv.PNG" alt="CSV"></button>
+                <button ><img class="ver-img2" src="EstiloVentas/image/PDF.PNG" alt="PDF"></button>
+                <input type="text" placeholder="BUSCAR">
+            </div>
+            
+            <table>
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Nombre</th>
+                        <th>Apellido</th>
+                        <th>Email</th>
+                        <th>Teléfono</th>
+                        <th>Rol</th>
+                        <th>Estado</th>
+                        <th>Acciones</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>000113</td>
+                        <td>Boleta</td>
+                        <td>02-10-2024</td>
+                        <td>Efectivo</td>
+                        <td>---</td>
+                        <td class="green">Exitosa</td>
+                        <td>334.00</td>
+                        <td>
+                            <button class="action-btn"><img class="ver-img" src="EstiloVentas/image/Ver.png" alt="Ver"></button>
+                            <button class="action-btn"><img class="ver-img" src="EstiloVentas/image/Editar.png" alt="Editar"></button>
+                            <button class="action-btn"><img class="ver-img" src="EstiloVentas/image/Eliminar.png" alt="Eliminar"></button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>00011222</td>
+                        <td>Factura</td>
+                        <td>02-10-2024</td>
+                        <td>Efectivo</td>
+                        <td>---</td>
+                        <td class="red">Anulado</td>
+                        <td>---</td>
+                        <td>
+                            <button class="action-btn"><img class="ver-img" src="EstiloVentas/image/Ver.png" alt="Ver"></button>
+                            <button class="action-btn"><img class="ver-img" src="EstiloVentas/image/Editar.png" alt="Editar"></button>
+                            <button class="action-btn"><img class="ver-img" src="EstiloVentas/image/Eliminar.png" alt="Eliminar"></button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            
+            <div class="pagination">
+                <p>Mostrando registros del 1 al 2 de un total de 2 registros</p>
+                <div>
+                    <button>Anterior</button>
+                    <button class="active">1</button>
+                    <button>Siguiente</button>
+                </div>
+            </div>
+        </div>
+
     </main>
 
     <script src="script.js"></script>

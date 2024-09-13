@@ -1,0 +1,186 @@
+/* Estilos generales */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/* Estilo de la barra lateral */
+.sidebar {
+    width: 200px;
+    background-color: #000000;
+    color: white;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1; /* Asegura que la barra lateral esté sobre el contenido */
+}
+
+.logo img {
+    width: 150px;
+    height: auto;
+    display: block;
+    margin: 20px auto;
+}
+
+.sidebar ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0; /* Eliminar márgenes */
+}
+
+
+
+.sidebar ul li {
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
+}
+
+.sidebar ul li a.menu-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
+}
+
+.sidebar ul li a.menu-item img {
+    width: 40px;
+    height: 40px;
+    object-fit: contain;
+}
+
+.span_ventas {
+    display: block;
+    text-align: center;
+    color: white;
+    font-size: 12px;
+    margin-top: 5px;
+    text-decoration: none;
+}
+
+
+/* Estilo de la barra de cerrar sesión */
+.header {
+    background-color: #000; /* Fondo negro */
+    color: white;
+    height: 60px; /* Aumentar la altura para centrado adecuado */
+    display: flex;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 200px; /* Alineación con la barra lateral */
+    width: calc(100% - 200px); /* Resto del ancho */
+    z-index: 2; /* Asegura que la barra esté sobre el contenido */
+    padding: 0 20px; /* Espaciado horizontal */
+    justify-content: flex-end; /* Alinear al lado derecho */
+}
+
+/* Estilo de la imagen de usuario */
+.user-icon {
+    width: 55px;
+    height: 40px;
+    margin-left: 10px; /* Espacio entre el botón y la imagen */
+}
+
+/* Botón de cerrar sesión */
+.logout-btn {
+    background-color: rgb(0, 0, 0);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+/* Estilo del contenido principal */
+.main-content {
+    margin-left: 200px; /* Espacio para la barra lateral */
+    margin-top: 60px; /* Espacio para la barra de cerrar sesión */
+    padding: 20px;
+}
+
+/* Estilo de la tabla */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th, td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+
+.green {
+    background-color: #4CAF50;
+    color: white;
+}
+
+.red {
+    background-color: #f44336;
+    color: white;
+}
+
+/* Controles */
+.controls {
+    margin-bottom: 20px;
+}
+
+/* Paginación */
+.pagination {
+    margin-top: 20px;
+}
+
+.pagination p {
+    margin: 0;
+}
+
+.pagination div {
+    display: inline-block;
+}
+
+.pagination button {
+    background-color: white;
+    border: 1px solid #ddd;
+    padding: 5px 10px;
+    margin-left: 5px;
+    cursor: pointer;
+}
+
+.pagination button.active {
+    background-color: #4CAF50;
+    color: white;
+}
+
+
+.title-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #f0f0f0;
+    margin-bottom: 20px;
+}
+
+.title-section h1 {
+    font-size: 24px;
+    color: #333;
+    margin: 0;
+}
+
+.new-btn {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.new-btn:hover {
+    background-color: #45a049;
+}
