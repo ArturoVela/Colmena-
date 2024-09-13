@@ -118,19 +118,25 @@ app.get("/proveedores", verifyToken, (req, res) => res.sendFile(__dirname + "/Lo
 console.log(__dirname);
 
 
-// Ruta para obtener todas las ventas
-app.get('/ventas', (req, res) => {
+app.get('/ventas', verifyToken, (req, res) => {
     req.getConnection((err, connection) => {
-        if (err) throw err;
+        if (err) {
+            console.error('Error al obtener la conexión:', err);
+            return res.status(500).send('Error al obtener la conexión');
+        }
 
         const query = 'SELECT * FROM ventas';
         connection.query(query, (err, results) => {
-            if (err) throw err;
+            if (err) {
+                console.error('Error al ejecutar la consulta:', err);
+                return res.status(500).send('Error al ejecutar la consulta');
+            }
 
             res.json(results);
         });
     });
 });
+
 
 // Ruta para registrar una nueva venta
 app.post('/ventas', (req, res) => {

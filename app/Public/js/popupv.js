@@ -47,11 +47,13 @@ function agregarEventoEliminar(btnEliminar, nroDocumento, fila) {
     });
 }
 
-// Función para cargar las ventas desde la base de datos cuando la página se cargue
 document.addEventListener('DOMContentLoaded', function() {
-    fetch('/ventas') // Ruta para obtener las ventas desde el servidor
+    // Cargar las ventas desde la base de datos cuando la página se cargue
+    fetch('/api/ventas') // Ruta para obtener las ventas desde el servidor
     .then(response => response.json())
     .then(data => {
+        const tablaVentas = document.querySelector("tbody");
+
         // Recorrer los datos obtenidos y generar las filas de la tabla
         data.forEach(venta => {
             var nuevaFila = `
@@ -79,6 +81,7 @@ document.addEventListener('DOMContentLoaded', function() {
     })
     .catch(error => console.error('Error al cargar las ventas:', error));
 });
+
 
 // Registrar venta y actualizar la tabla sin recargar la página
 formRegistroVenta.onsubmit = function(event) {
