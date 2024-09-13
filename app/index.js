@@ -1,4 +1,3 @@
-
 import cookieParser from 'cookie-parser';
 import jwt from 'jsonwebtoken';
 import express from 'express';
@@ -77,10 +76,14 @@ app.post('/', (req, res) => {
 
                 // Comparar la contraseña ingresada con la almacenada sin bcrypt
                 if (password === userFromDB.password) {
-                    // Si la contraseña es correcta, generar el token JWT
-                    const token = jwt.sign({ user: userFromDB.user }, secretKey, { expiresIn: '1h' });
+                    // Generar el token JWT con el nombre del usuario
+                    const token = jwt.sign({ user: userFromDB.user, nombre: userFromDB.nombre }, secretKey, { expiresIn: '1h' });
+                    
+                    // Almacenar el token JWT en una cookie
                     res.cookie('token', token, { httpOnly: true });
-                    res.redirect('/menu');  // Redirigir a /menu después de iniciar sesión
+                    
+                    // Redirigir a la página del menú después de iniciar sesión
+                    res.redirect('/menu');
                 } else {
                     res.status(401).send('Contraseña incorrecta');
                 }
@@ -115,9 +118,7 @@ app.get("/caja", verifyToken, (req, res) => res.sendFile(__dirname + "/Login/Men
 app.get("/incidencias", verifyToken, (req, res) => res.sendFile(__dirname + "/Login/Menu/Incidencias.html"));
 app.get("/proveedores", verifyToken, (req, res) => res.sendFile(__dirname + "/Login/Menu/Proveedor.html"));
 
-console.log(__dirname);
-
-
+// Ruta para obtener las ventas desde la base de datos
 app.get('/ventas', verifyToken, (req, res) => {
     req.getConnection((err, connection) => {
         if (err) {
@@ -132,11 +133,11 @@ app.get('/ventas', verifyToken, (req, res) => {
                 return res.status(500).send('Error al ejecutar la consulta');
             }
 
+            // Verificar los datos obtenidos de la base de datos
             res.json(results);
         });
     });
 });
-
 
 // Ruta para registrar una nueva venta
 app.post('/ventas', (req, res) => {
@@ -177,4 +178,3 @@ app.delete('/ventas/:nro_documento', (req, res) => {
         });
     });
 });
-

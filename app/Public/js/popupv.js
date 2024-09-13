@@ -48,8 +48,30 @@ function agregarEventoEliminar(btnEliminar, nroDocumento, fila) {
 }
 
 document.addEventListener('DOMContentLoaded', function() {
+    // Obtener el token JWT de las cookies
+    const tokenCookie = document.cookie.split('; ').find(row => row.startsWith('token='));
+    
+    if (tokenCookie) {
+        const token = tokenCookie.split('=')[1];
+
+        if (token) {
+            try {
+                // Decodificar el token JWT para obtener el nombre del usuario
+                const decodedToken = jwt_decode(token);
+                const nombreUsuario = decodedToken.nombre;
+
+                // Mostrar el nombre del usuario en la parte superior derecha
+                document.getElementById('nombreUsuario').textContent = `Hola, ${nombreUsuario}`;
+            } catch (error) {
+                console.error("Error al decodificar el token JWT:", error);
+            }
+        }
+    } else {
+        console.error("No se encontró el token JWT en las cookies.");
+    }
+
     // Cargar las ventas desde la base de datos cuando la página se cargue
-    fetch('/api/ventas') // Ruta para obtener las ventas desde el servidor
+    fetch('/ventas') // Ruta para obtener las ventas desde el servidor
     .then(response => response.json())
     .then(data => {
         const tablaVentas = document.querySelector("tbody");
@@ -81,7 +103,6 @@ document.addEventListener('DOMContentLoaded', function() {
     })
     .catch(error => console.error('Error al cargar las ventas:', error));
 });
-
 
 // Registrar venta y actualizar la tabla sin recargar la página
 formRegistroVenta.onsubmit = function(event) {
