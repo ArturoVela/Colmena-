@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registrar Venta</title>
+    <link rel="stylesheet" href="popup/estilopopupv.css">
+</head>
+<body>
+    <!-- Modal oculto por defecto -->
+    <div id="modalVentas" class="modal">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <h2>Registrar Venta</h2>
+            <form>
+                <!-- Sección de Datos Generales -->
+                <fieldset>
+                    <legend>Datos Generales</legend>
+                    <label for="boleta"><input type="checkbox" id="boleta" name="boleta"> Boleta</label>
+                    <label for="factura"><input type="checkbox" id="factura" name="factura"> Factura</label>
+
+                    <label for="nroDocumento">Nro. Documento:</label>
+                    <input type="text" id="nroDocumento" name="nroDocumento">
+
+                    <label for="dniRuc">DNI / RUC:</label>
+                    <input type="text" id="dniRuc" name="dniRuc">
+
+                    <label for="cliente">Cliente / Razón Social:</label>
+                    <input type="text" id="cliente" name="cliente">
+
+                    <label for="formaPago">Forma de Pago:</label>
+                    <select id="formaPago" name="formaPago">
+                        <option value="">-- Seleccionar Forma de Pago --</option>
+                        <option value="efectivo">Efectivo</option>
+                        <option value="tarjeta">Tarjeta</option>
+                    </select>
+
+                    <label for="fechaVenta">Fecha Venta:</label>
+                    <input type="date" id="fechaVenta" name="fechaVenta">
+                </fieldset>
+
+                <!-- Sección de Items -->
+                <fieldset>
+                    <legend>Items</legend>
+                    <label for="buscarProducto">Buscar Producto:</label>
+                    <input type="text" id="buscarProducto" name="buscarProducto">
+                    
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Producto</th>
+                                <th>Cantidad</th>
+                                <th>Descripción</th>
+                                <th>U. Medida</th>
+                                <th>Precio Unitario</th>
+                                <th>TOTAL</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><input type="text" name="producto"></td>
+                                <td><input type="number" name="cantidad"></td>
+                                <td><input type="text" name="descripcion"></td>
+                                <td><input type="text" name="unidad"></td>
+                                <td><input type="number" name="precioUnitario"></td>
+                                <td><input type="number" name="totalItem"></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </fieldset>
+
+                <!-- Botón Registrar -->
+                <button type="submit" class="submit-btn">REGISTRAR</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="js/popupv.js"></script>
+</body>
+</html>

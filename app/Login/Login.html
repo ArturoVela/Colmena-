@@ -3,9 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Inicar Session</title>
+    <title>Iniciar Sesión</title>
     <link rel="stylesheet" href="style.css">
-    <script src="login.js" defer></script>
 </head>
 <body>
     
@@ -20,12 +19,13 @@
             <img src="Imagenes/Recursos/Perfil2.png" alt="Icono perfil"> 
         </div>
         <div class="cerrar">
-            <a href="https://youtu.be/sDScFg5WaRw?t=48" target="_blank">   <!--cambiar link xd -->
-                <img src="Imagenes/Recursos/x.png" alt="el que cierra las pestañas">
+            <a href="https://youtu.be/sDScFg5WaRw?t=48" target="_blank"> <!-- Cambiar el link -->
+                <img src="Imagenes/Recursos/x.png" alt="Cerrar">
             </a>
         </div>
         <div class="FORMULARIO">
-            <form method="post" id="frorm-container">
+            <!-- El formulario envía una solicitud POST a la raíz / -->
+            <form method="POST" action="/" id="form-container">
                 <div class="username">
                     <label for="user">USUARIO</label>
                     <input type="text" name="user" id="user" required placeholder="Ingrese su usuario">
@@ -36,24 +36,14 @@
                         <input type="password" name="password" id="password" required placeholder="Ingrese su contraseña">
                     </div>
                 </div>
-                <!-- <div class="Recordar">
-                    <a href="/recuperar" class="Recrodar2">
-                        ¿olvidaste tu contraseña?
-                    </a>
-                </div> -->
-                    <div  class="boton_inicio">
-                        <input type="submit" value="INICIAR SESSIÓN" onclick="redirecionar()">
-                    </div>
-                    <p class="error escondido">Error al iniciar session  </p>
-                <!-- <div class="Registro">
-                    <a href="#" class="Registro2">
-                        ¿Aún no tienes una cuenta? Regístrate
-                    </a>
-                </div>        -->
+                <div class="boton_inicio">
+                    <input type="submit" value="INICIAR SESIÓN">
+                </div>
+                <p class="error escondido">Error al iniciar sesión</p>
             </form>
         </div>
-        
     </div>
-    ><script src="Inicar.js"></script>
+
 </body>
 </html>
+

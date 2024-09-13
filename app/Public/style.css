@@ -59,6 +59,7 @@ body::before {
     scale: 7%;
     margin-top: -420px;
     margin-left: 370px;
+    visibility: hidden;
 }
 
 

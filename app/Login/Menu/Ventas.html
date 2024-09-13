@@ -106,28 +106,29 @@
       
 
         <div class="main-content">
-            <!-- Encabezado "VENTAS" agregado -->
+            <!-- Encabezado "VENTAS" -->
             <div class="title-section">
                 <h1>VENTAS</h1>
-                <button class="new-btn">+ Nuevo</button>
+                <button class="new-btn" id="abrirModal">+ Nuevo</button>
             </div>
-    
-    
-        
-            <div class="controls">
-                <label>Mostrar</label>
-                <select>
-                    <option>10</option>
+
+            <!-- Barra de herramientas -->
+            <div class="toolbar">
+                <button class="btn-toolbar">Copiar</button>
+                <button class="btn-toolbar">Excel</button>
+                <button class="btn-toolbar">CSV</button>
+                <button class="btn-toolbar">PDF</button>
+                <select name="registros" id="registros">
+                    <option value="10">10</option>
+                    <option value="25">25</option>
+                    <option value="50">50</option>
+                    <option value="100">100</option>
                 </select>
-                <label>registros</label>
-                <button><img class="ver-img2" src="EstiloVentas/image/Copiar.PNG" alt="Copiar"> Copiar</button>
-                <button ><img class="ver-img2" src="EstiloVentas/image/Excel.PNG" alt="Excel"></button>
-                <button ><img class="ver-img2" src="EstiloVentas/image/Csv.PNG" alt="CSV"></button>
-                <button ><img class="ver-img2" src="EstiloVentas/image/PDF.PNG" alt="PDF"></button>
-                <input type="text" placeholder="BUSCAR">
+                <input type="text" id="buscar" placeholder="BUSCAR">
             </div>
-            
-            <table>
+
+            <!-- Tabla de ventas -->
+            <table class="ventas-table">
                 <thead>
                     <tr>
                         <th>Nro Documento</th>
@@ -141,51 +142,66 @@
                     </tr>
                 </thead>
                 <tbody>
+                    <!-- Aquí se agregarán las nuevas filas de ventas mediante JS -->
                     <tr>
-                        <td>000113</td>
-                        <td>Boleta</td>
-                        <td>02-10-2024</td>
-                        <td>Efectivo</td>
-                        <td>---</td>
-                        <td class="green">Exitosa</td>
-                        <td>334.00</td>
-                        <td>
-                            <button class="action-btn"><img class="ver-img" src="EstiloVentas/image/Ver.png" alt="Ver"></button>
-                            <button class="action-btn"><img class="ver-img" src="EstiloVentas/image/Editar.png" alt="Editar"></button>
-                            <button class="action-btn"><img class="ver-img" src="EstiloVentas/image/Eliminar.png" alt="Eliminar"></button>
+                       
                         </td>
                     </tr>
                     <tr>
-                        <td>00011222</td>
-                        <td>Factura</td>
-                        <td>02-10-2024</td>
-                        <td>Efectivo</td>
-                        <td>---</td>
-                        <td class="red">Anulado</td>
-                        <td>---</td>
-                        <td>
-                            <button class="action-btn"><img class="ver-img" src="EstiloVentas/image/Ver.png" alt="Ver"></button>
-                            <button class="action-btn"><img class="ver-img" src="EstiloVentas/image/Editar.png" alt="Editar"></button>
-                            <button class="action-btn"><img class="ver-img" src="EstiloVentas/image/Eliminar.png" alt="Eliminar"></button>
+                       
                         </td>
                     </tr>
                 </tbody>
             </table>
-            
-            <div class="pagination">
-                <p>Mostrando registros del 1 al 2 de un total de 2 registros</p>
-                <div>
-                    <button>Anterior</button>
-                    <button class="active">1</button>
-                    <button>Siguiente</button>
+
+
+
+           <!-- Modal para Registrar Venta -->
+            <div id="modalVentas" class="modal">
+                <div class="modal-content">
+                    <span class="close-btn">&times;</span>
+                    <h2>Registrar Venta</h2>
+                    <form id="registroVentaForm">
+                        <fieldset>
+                            <legend>Datos Generales</legend>
+                            <label for="boleta"><input type="radio" id="boleta" name="tipo_documento" value="Boleta" required> Boleta</label>
+                            <label for="factura"><input type="radio" id="factura" name="tipo_documento" value="Factura"> Factura</label>
+
+                            <label for="nroDocumento">Nro. Documento:</label>
+                            <input type="text" id="nroDocumento" name="nro_documento" required>
+
+                            <label for="fechaVenta">Fecha Venta:</label>
+                            <input type="date" id="fechaVenta" name="fecha_venta" required>
+
+                            <label for="formaPago">Forma de Pago:</label>
+                            <select id="formaPago" name="forma_pago" required>
+                                <option value="">-- Seleccionar Forma de Pago --</option>
+                                <option value="efectivo">Efectivo</option>
+                                <option value="tarjeta">Tarjeta</option>
+                            </select>
+
+                            <label for="descripcion">Descripción:</label>
+                            <textarea id="descripcion" name="descripcion"></textarea>
+
+                            <label for="estado">Estado:</label>
+                            <select id="estado" name="estado" required>
+                                <option value="exitosa">Exitosa</option>
+                                <option value="anulada">Anulada</option>
+                                <option value="pendiente">Pendiente</option>
+                            </select>
+
+                            <label for="total">Total:</label>
+                            <input type="number" id="total" name="total" required>
+                        </fieldset>
+                        <button type="submit" class="submit-btn">REGISTRAR</button>
+                    </form>
                 </div>
             </div>
         </div>
 
 
-
     </main>
 
-    <script src="script.js"></script>
+    <script src="js/popupv.js"></script>
 </body>
 </html>
