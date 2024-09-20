@@ -9,6 +9,155 @@
     <link rel="stylesheet" href="EstilosMenu/estilosR.css">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <script src="https://kit.fontawesome.com/41bcea2ae3.js" crossorigin="anonymous"></script>
+
+    <style>
+        .btn.nuevo {
+            background-color: #333;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 20px;
+            cursor: pointer;
+            margin-top: 160px;
+        }
+
+        .search-box {
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 20px;
+            width: 200px;
+            margin-right: 10px;
+            margin-top: 160px;
+
+        }
+        /* Cuadrícula de habitaciones */
+        .habitaciones-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+            gap: 15px;
+            margin-bottom: 20px;
+            margin-top: 80px;
+        }
+
+        .habitacion {
+            border-radius: 5px;
+            padding: 15px;
+            color: white;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            height: 100px;
+            text-align: center;
+            cursor: pointer;
+        }
+
+        .habitacion .numero {
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        .habitacion .estado {
+            font-size: 14px;
+        }
+
+        /* Colores de habitaciones según su estado */
+        .habitacion.disponible {
+            background-color: #2ecc71;
+        }
+
+        .habitacion.ocupado {
+            background-color: #f39c12;
+        }
+
+        .habitacion.mantenimiento {
+            background-color: #3498db;
+        }
+
+        /* Estilo de la paginación */
+        .pagination {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .btn.anterior, .btn.siguiente {
+            background-color: #fff;
+            border: 1px solid #ddd;
+            padding: 5px 10px;
+            margin: 0 5px;
+            cursor: pointer;
+        }
+
+        .page-number {
+            background-color: #c41230;
+            color: white;
+            padding: 5px 10px;
+            border-radius: 50%;
+        }
+
+        /* Estilos para el modal */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0,0,0,0.4);
+        }
+
+        .modal-content {
+            background-color: #fefefe;
+            margin: 15% auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%;
+            max-width: 500px;
+            border-radius: 5px;
+        }
+
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: #000;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        .modal-content input[type="text"],
+        .modal-content input[type="date"],
+        .modal-content select {
+            width: 100%;
+            padding: 5px;
+            margin-top: 5px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+
+        .modal-content button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            float: right;
+            margin-top: 10px;
+        }
+
+        .modal-content button:hover {
+            background-color: #45a049;
+        }
+    </style>
 </head>
 <body id="body">
     
@@ -107,87 +256,114 @@
     <main>
         
 
-        <div class="main-content">
-            <!-- Encabezado "VENTAS" agregado -->
-            <div class="title-section">
-                <h1>RESERVACIONES</h1>
-                <button class="new-btn">+ Nuevo</button>
-            </div>
-    
-        
-        
-            <div class="controls">
-                <label>Mostrar</label>
-                <select>
-                    <option>10</option>
-                </select>
-                <label>registros</label>
-                <button><img class="ver-img2" src="EstiloVentas/image/Copiar.PNG" alt="Copiar"> Copiar</button>
-                <button ><img class="ver-img2" src="EstiloVentas/image/Excel.PNG" alt="Excel"></button>
-                <button ><img class="ver-img2" src="EstiloVentas/image/Csv.PNG" alt="CSV"></button>
-                <button ><img class="ver-img2" src="EstiloVentas/image/PDF.PNG" alt="PDF"></button>
-                <input type="text" placeholder="BUSCAR">
-            </div>
-            
-            <table>
-                <thead>
-                    <tr>
-                        <th>ID</th>
-                        <th>Check In</th>
-                        <th>Chech Out</th>
-                        <th>Cliente</th>
-                        <th>Nro. Habitación</th>
-                        <th>Total</th>
-                        <th>Estados</th>
-                        <th>ACCIONES</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>000113</td>
-                        <td>Boleta</td>
-                        <td>02-10-2024</td>
-                        <td>Efectivo</td>
-                        <td>---</td>
-                        <td class="green">Exitosa</td>
-                        <td>334.00</td>
-                        <td>
-                            <button class="action-btn"><img class="ver-img" src="EstiloVentas/image/Ver.png" alt="Ver"></button>
-                            <button class="action-btn"><img class="ver-img" src="EstiloVentas/image/Editar.png" alt="Editar"></button>
-                            <button class="action-btn"><img class="ver-img" src="EstiloVentas/image/Eliminar.png" alt="Eliminar"></button>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>00011222</td>
-                        <td>Factura</td>
-                        <td>02-10-2024</td>
-                        <td>Efectivo</td>
-                        <td>---</td>
-                        <td class="red">Anulado</td>
-                        <td>---</td>
-                        <td>
-                            <button class="action-btn"><img class="ver-img" src="EstiloVentas/image/Ver.png" alt="Ver"></button>
-                            <button class="action-btn"><img class="ver-img" src="EstiloVentas/image/Editar.png" alt="Editar"></button>
-                            <button class="action-btn"><img class="ver-img" src="EstiloVentas/image/Eliminar.png" alt="Eliminar"></button>
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
-            
-            <div class="pagination">
-                <p>Mostrando registros del 1 al 2 de un total de 2 registros</p>
-                <div>
-                    <button>Anterior</button>
-                    <button class="active">1</button>
-                    <button>Siguiente</button>
+        <!-- Contenido principal -->
+        <div class="container">
+            <header>
+                <h1>Habitaciones <button class="btn nuevo">Nueva Habitación</button></h1>
+                <input type="text" class="search-box" placeholder="BUSCAR">
+            </header>
+
+            <div class="habitaciones-grid">
+                <!-- Recuadros de habitaciones con onclick para abrir el modal -->
+                <div class="habitacion disponible" onclick="openModal('001-1', 'Juan Pérez', '123456789', '2023-05-15', '2023-05-20', 'Pendiente')">
+                    <span class="numero">001-1</span>
+                    <span class="estado">Disponible</span>
+                </div>
+                <div class="habitacion disponible" onclick="openModal('001-2', 'Carlos López', '987654321', '2023-05-16', '2023-05-21', 'Cancelado')">
+                    <span class="numero">001-2</span>
+                    <span class="estado">Disponible</span>
+                </div>
+                <div class="habitacion ocupado" onclick="openModal('003-D', 'Ana Gómez', '1122334455', '2023-05-14', '2023-05-19', 'Pendiente')">
+                    <span class="numero">003-D</span>
+                    <span class="estado">Ocupado</span>
+                </div>
+                <div class="habitacion mantenimiento" onclick="openModal('004-S', '', '', '', '', '')">
+                    <span class="numero">004-S</span>
+                    <span class="estado">Mantenimiento</span>
+                </div>
+                <div class="habitacion disponible" onclick="openModal('005-A', 'María Torres', '3322114455', '2023-05-18', '2023-05-23', 'Pendiente')">
+                    <span class="numero">005-A</span>
+                    <span class="estado">Disponible</span>
+                </div>
+                <div class="habitacion ocupado" onclick="openModal('006-B', 'Luis Martínez', '2211445566', '2023-05-13', '2023-05-18', 'Cancelado')">
+                    <span class="numero">006-B</span>
+                    <span class="estado">Ocupado</span>
+                </div>
+                <div class="habitacion mantenimiento" onclick="openModal('007-C', '', '', '', '', '')">
+                    <span class="numero">007-C</span>
+                    <span class="estado">Mantenimiento</span>
+                </div>
+                <div class="habitacion disponible" onclick="openModal('008-D', 'Carla Reyes', '6655443322', '2023-05-20', '2023-05-25', 'Pendiente')">
+                    <span class="numero">008-D</span>
+                    <span class="estado">Disponible</span>
+                </div>
+                <div class="habitacion disponible" onclick="openModal('009-E', 'Pedro Castro', '5544332211', '2023-05-21', '2023-05-26', 'Pendiente')">
+                    <span class="numero">009-E</span>
+                    <span class="estado">Disponible</span>
+                </div>
+                <div class="habitacion ocupado" onclick="openModal('010-F', 'Diego Ruiz', '4455667788', '2023-05-12', '2023-05-17', 'Cancelado')">
+                    <span class="numero">010-F</span>
+                    <span class="estado">Ocupado</span>
                 </div>
             </div>
+
+            <div class="pagination">
+                <button class="btn anterior">Anterior</button>
+                <span class="page-number">1</span>
+                <button class="btn siguiente">Siguiente</button>
+            </div>
         </div>
+    </div>
 
-
-
+    <!-- Modal -->
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <h2>Detalles de la Habitación</h2>
+            <p><strong>Habitación:</strong> <input type="text" id="modal-numero"></p>
+            <p><strong>Nombre:</strong> <input type="text" id="modal-nombre"></p>
+            <p><strong>Teléfono:</strong> <input type="text" id="modal-telefono"></p>
+            <p><strong>Fecha de Entrada:</strong> <input type="date" id="modal-entrada"></p>
+            <p><strong>Fecha de Salida:</strong> <input type="date" id="modal-salida"></p>
+            <p><strong>Estado de Pago:</strong> 
+                <select id="modal-estado">
+                    <option value="Pendiente">Pendiente</option>
+                    <option value="Cancelado">Cancelado</option>
+                </select>
+            </p>
+            <button onclick="guardarCambios()">Guardar Cambios</button>
+        </div>
+    </div>
     </main>
+    <script>
+        function openModal(numero, nombre, telefono, entrada, salida, estado) {
+            document.getElementById("modal-numero").value = numero;
+            document.getElementById("modal-nombre").value = nombre || '';
+            document.getElementById("modal-telefono").value = telefono || '';
+            document.getElementById("modal-entrada").value = entrada || '';
+            document.getElementById("modal-salida").value = salida || '';
+            document.getElementById("modal-estado").value = estado || 'Pendiente';
+            document.getElementById("modal").style.display = "block";
+        }
 
+        function closeModal() {
+            document.getElementById("modal").style.display = "none";
+        }
+
+        function guardarCambios() {
+            // Aquí puedes agregar la lógica para guardar los cambios
+            // Por ahora, solo cerraremos el modal
+            console.log("Cambios guardados");
+            closeModal();
+        }
+
+        window.onclick = function(event) {
+            var modal = document.getElementById("modal");
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+    </script>
     <script src="script.js"></script>
 </body>
 </html>
