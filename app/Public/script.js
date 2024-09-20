@@ -40,3 +40,34 @@ window.addEventListener("resize", function() {
         logo.style.display = "block"; // Mostrar logo en pantallas pequeñas
     }
 });
+
+document.addEventListener('DOMContentLoaded', () => {
+    const token = getCookie('token');
+    console.log("Token obtenido:", token);
+
+    if (token) {
+        try {
+            const decoded = jwt_decode(token);
+            console.log("Token decodificado:", decoded);
+            const nombreUsuario = decoded.nombre;
+            console.log("Nombre del usuario:", nombreUsuario);
+
+            const nombreUsuarioElement = document.getElementById('nombreUsuario');
+            if (nombreUsuarioElement) {
+                nombreUsuarioElement.textContent = `Bienvenido, ${nombreUsuario}`;
+            } else {
+                console.error("Elemento con id 'nombreUsuario' no encontrado en el DOM.");
+            }
+        } catch (error) {
+            console.error("Error al decodificar el token:", error);
+        }
+    } else {
+        console.warn("No se encontró el token JWT en las cookies.");
+    }
+});
+
+function getCookie(name) {
+    const value = `; ${document.cookie}`;
+    const parts = value.split(`; ${name}=`);
+    if (parts.length === 2) return parts.pop().split(';').shift();
+}
