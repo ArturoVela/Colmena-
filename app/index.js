@@ -47,6 +47,7 @@ function verifyToken(req, res, next) {
     try {
         const verified = jwt.verify(token, secretKey);
         req.user = verified;
+        res.locals.nombreUsuario = verified.nombre; // Guardar el nombre del usuario en res.locals
         next();
     } catch (err) {
         return res.status(400).redirect('/'); // Redirigir al login si el token es inválido
@@ -64,7 +65,7 @@ app.post('/', (req, res) => {
             return res.status(500).send('Error de servidor. Inténtalo de nuevo más tarde.');
         }
 
-        // Consulta para obtener el usuario de la base de datos
+        // Modificar la consulta para extraer el nombre del usuario
         connection.query('SELECT * FROM users WHERE user = ?', [user], (err, result) => {
             if (err) {
                 console.error('Error al ejecutar la consulta:', err);
@@ -74,14 +75,14 @@ app.post('/', (req, res) => {
             if (result.length > 0) {
                 const userFromDB = result[0];
 
-                // Comparar la contraseña ingresada con la almacenada sin bcrypt
+                // Compara la contraseña ingresada
                 if (password === userFromDB.password) {
                     // Generar el token JWT con el nombre del usuario
                     const token = jwt.sign({ user: userFromDB.user, nombre: userFromDB.nombre }, secretKey, { expiresIn: '1h' });
-                    
+
                     // Almacenar el token JWT en una cookie
                     res.cookie('token', token, { httpOnly: true });
-                    
+
                     // Redirigir a la página del menú después de iniciar sesión
                     res.redirect('/menu');
                 } else {
@@ -91,8 +92,10 @@ app.post('/', (req, res) => {
                 res.status(404).send('Usuario no encontrado');
             }
         });
+
     });
 });
+
 
 // Ruta para cerrar sesión
 app.get('/logout', (req, res) => {
