@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,300;1,400;1,600;1,700;1,800&display=swap');
 
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -8,13 +8,12 @@
     font-family: 'Open Sans', sans-serif;
 }
 
-body{
-    background-color: #D3D3D3;
+body {
+    background-color: #d3d3d3;
     margin-left: 80px;
     margin-top: 80px;
     transition: margin-left 300ms cubic-bezier(0.785, 0.135, 0.15, 0.86);
 }
-
 main{
     padding: 20px;
 }
@@ -39,44 +38,8 @@ header{
     z-index: 1000; 
 }
 
-
-.cerrar_sesion {
-    font-size: 16px;
-    margin-top: 20px;
-    margin-right: 10px; 
-    color: white;
-    text-decoration: none;
-    font-weight: bold;
-}
-
-.cerrar_sesion:hover {
-    color: #b3006e; 
-    text-decoration: none;
-}
-
-.logo img {
-    width: 50px; 
-    height: auto; 
-    border-radius: 50%; 
-}
-
-.icon__menu{
-    width: 50px;
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    transform: translateX(10px);
-    color: #fff;
-}
-
-.icon__menu i{
-    font-size: 20px;
-    cursor: pointer;
-    position: absolute;
-}
-
-.menu__side{
+/* Estilos para el menú lateral */
+.menu__side {
     width: 80px;
     height: 100%;
     background: #292929;
@@ -92,183 +55,79 @@ header{
     transition: all 300ms cubic-bezier(0.785, 0.135, 0.15, 0.86);
 }
 
-/*Ocultar scroll para chrome, safari y opera*/
-.menu__side::-webkit-scrollbar{
+.menu__side::-webkit-scrollbar {
     display: none;
 }
 
-/*Ocultar scroll para IE, Edge y Firefox*/
-.menu__side{
+.menu__side {
     -ms-overflow-style: none;
     scrollbar-width: none;
 }
 
-
-.name__page{
-    padding: 20px 30px;
+.name__page {
+    padding: 20px 0;
     display: flex;
     align-items: center;
-    margin-top: 10px;
+    justify-content: center;
 }
 
-.name__page i{
+.name__page i {
     width: 20px;
     margin-right: 20px;
 }
 
-.options__menu{
-    padding: 20px 30px;
-    position: absolute;
-    top: 80px;
+.options__menu {
+    padding: 20px 0;
 }
 
-.options__menu a{
-    color: #fff;
+.options__menu a {
+    color: #ffffffb2;
     cursor: default;
     display: block;
     position: relative;
     transition: color 300ms;
+    padding: 15px 0;
+    text-align: center;
 }
 
-.options__menu a:hover{
+.options__menu a:hover {
     color: white;
 }
 
-.options__menu .option{
-    padding: 20px 0px;
-    display: flex;
-    align-items: center;
-    position: relative;
+.options__menu .option i {
+    margin-bottom: 5px;
+    font-size: 24px;
 }
 
-.options__menu .option i{
-    width: 20px;
-    margin-right: 20px;
-    cursor: pointer;
-}
-
-.options__menu .option h4{
+.options__menu .option h4 {
     font-weight: 300;
-    cursor: pointer;
+    font-size: 12px;
 }
 
-a.selected{
-    color: #white;
-    
+a.selected {
+    color: #fff;
+    background: #1a1a1a;
 }
 
-.selected:before{
-    content: '';
-    width: 3px;
-    height: 80%;
-    background: rgb(255, 255, 255);
-    position: absolute;
-    top: 350%;
-    left: -30px;
-}
-
-/*Clases para usar en JavaScript*/
-
-.body_move{
-    margin-left: 250px;
-}
-
-.menu__side_move{
-    width: 250px;
-}
-
-
-@media screen and (max-width: 760px){
-    .body_move{
-        margin-left: 0px;
-    }
-
-    .menu__side_move{
-        width: 80px;
-        left: -80px;
-    }
-}
-
-
-
-
-
-
-/* Estilo del contenido principal */
+/* Estilos para el contenido principal */
 .main-content {
-    margin-left: -30px; /* Espacio para la barra lateral */
-    margin-top: -30px; /* Espacio para la barra de cerrar sesión */
+    background-color: #ffffff;
     padding: 20px;
+    border-radius: 5px;
+    margin: 20px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
 }
-
-/* Estilo de la tabla */
-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-top: 20px;
-}
-
-th, td {
-    border: 1px solid #ddd;
-    padding: 8px;
-    text-align: left;
-}
-
-.green {
-    background-color: #4CAF50;
-    color: white;
-}
-
-.red {
-    background-color: #f44336;
-    color: white;
-}
-
-/* Controles */
-.controls {
-    margin-bottom: 20px;
-}
-
-/* Paginación */
-.pagination {
-    margin-top: 20px;
-}
-
-.pagination p {
-    margin: 0;
-}
-
-.pagination div {
-    display: inline-block;
-}
-
-.pagination button {
-    background-color: white;
-    border: 1px solid #ddd;
-    padding: 5px 10px;
-    margin-left: 5px;
-    cursor: pointer;
-}
-
-.pagination button.active {
-    background-color: #4CAF50;
-    color: white;
-}
-
 
 .title-section {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 10px 20px;
-    background-color: #f0f0f0;
     margin-bottom: 20px;
 }
 
 .title-section h1 {
     font-size: 24px;
     color: #333;
-    margin: 0;
 }
 
 .new-btn {
@@ -281,16 +140,115 @@ th, td {
     font-size: 16px;
 }
 
-.new-btn:hover {
-    background-color: #45a049;
+.controls {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
 }
 
-.ver-img {
-    width: 24px;  /* Ajusta el ancho según lo que prefieras */
-    height: auto; /* Mantiene la proporción de la imagen */ 
+.controls label, .controls select {
+    margin-right: 10px;
 }
 
-.ver-img2 {
-    width: 50px;  /* Ajusta el ancho según lo que prefieras */
-    height: auto; /* Mantiene la proporción de la imagen */ 
+.control-btn {
+    background-color: #f8f9fa;
+    border: 1px solid #ced4da;
+    padding: 5px 10px;
+    margin-right: 5px;
+    cursor: pointer;
+}
+
+.controls input[type="text"] {
+    margin-left: auto;
+    padding: 5px;
+    border: 1px solid #ced4da;
+    border-radius: 3px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: white;
+}
+
+th, td {
+    border: 1px solid #dee2e6;
+    padding: 12px;
+    text-align: left;
+}
+
+th {
+    background-color: #f8f9fa;
+    font-weight: bold;
+}
+
+.status {
+    font-weight: bold;
+}
+
+.active {
+    color: #28a745;
+}
+
+.inactive {
+    color: #dc3545;
+}
+
+.action-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 18px;
+    color: #007bff;
+    margin-right: 5px;
+}
+
+.pagination {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.pagination button {
+    background-color: #fff;
+    border: 1px solid #ced4da;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+.pagination button.active {
+    background-color: #007bff;
+    color: white;
+    border-color: #007bff;
+}
+
+/* Ajustes adicionales para mejorar la responsividad */
+@media screen and (max-width: 768px) {
+    body {
+        margin-left: 0;
+    }
+    
+    .menu__side {
+        left: -80px;
+    }
+    
+    .main-content {
+        margin: 10px;
+    }
+    
+    .controls {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .controls input[type="text"] {
+        margin-left: 0;
+        margin-top: 10px;
+        width: 100%;
+    }
+}
+.logo img {
+    width: 50px;
 }

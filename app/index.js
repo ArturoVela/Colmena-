@@ -21,9 +21,9 @@ console.log("Servidor corriendo en puerto", app.get("port"));
 app.use(myconnection(mysql, {
     host: 'localhost',
     user: 'root',
-    password: '',
+    password: '2024',
     port: 3306,
-    database: 'Colmena'
+    database: 'colmenadb'
 }, 'single'));
 
 app.use(express.static(__dirname + "/Public"));
@@ -178,3 +178,9 @@ app.delete('/ventas/:nro_documento', (req, res) => {
         });
     });
 });
+  // Ruta para servir el archivo HTML
+app.get('/', (req, res) => {
+    res.sendFile(path.join(__dirname, 'public', 'index.html'));
+  });
+  
+  
